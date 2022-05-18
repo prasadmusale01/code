@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+
+
+<body>
+
+    <h1 font-size: 20px;>Get the data you want</h1>
+
+        <button onclick="ajax()" id="but">Fetch data</button>
+<style>
+
+    #but{
+        border:solid;
+        border-radius: 25px;
+        border-width:20px;
+        border-color: rgb(246, 11, 11);
+        margin: 40px;
+        padding: 30px;
+        font-size: 26px;
+   
+    }
+
+</style>
+
+    <script>
+
+        function ajax(){
+            var obj=new XMLHttpRequest();
+
+            obj.onload=function(){
+                alert('loaded')
+                console.log(this.responseText);
+            }
+
+            obj.open('GET','https://jsonplaceholder.typicode.com',true);
+            obj.send();
+        }
+
+    </script>
+</body>
+</html>
